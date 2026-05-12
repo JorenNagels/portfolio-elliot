@@ -11,7 +11,7 @@ export default function Services() {
       <FadeIn as="h2" className="font-display text-[clamp(2.2rem,5vw,3.8rem)] tracking-[0.04em] leading-none mb-2">
         “This man kills it
         <br />
-        with audience interaction.”
+        with audience interaction!”
       </FadeIn>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-px mt-12 border border-gold-faint">
