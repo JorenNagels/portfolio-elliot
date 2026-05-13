@@ -35,7 +35,7 @@ export default function Credits() {
               className="carousel-item flex h-20 w-40 flex-shrink-0 items-center justify-center border-r border-gold-faint px-6"
             >
               <img
-                src={`/images/brands/${b.file}`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/brands/${b.file}`}
                 alt={b.name}
                 className="brand-img max-h-10 max-w-[100px] object-contain"
               />
