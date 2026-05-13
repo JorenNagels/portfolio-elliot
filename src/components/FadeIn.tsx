@@ -24,7 +24,7 @@ export default function FadeIn({ as, className = '', children }: Props) {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
     obs.observe(el);
     return () => obs.disconnect();

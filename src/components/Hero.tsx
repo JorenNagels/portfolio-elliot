@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden px-6 sm:px-12 pb-20"
+      className="relative flex min-h-screen flex-col justify-end overflow-hidden px-6 pb-20 sm:px-12"
     >
       <ExportedImage
         src={heroImage}
@@ -14,7 +14,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover -z-10"
+        className="-z-10 object-cover"
       />
       {/* dark gradient overlay */}
       <div
@@ -25,20 +25,29 @@ export default function Hero() {
         }}
       />
       {/* faint gold grid */}
-      <div className="absolute inset-0 opacity-[0.04] hero-grid-overlay" />
+      <div className="hero-grid-overlay absolute inset-0 opacity-[0.04]" />
 
-      <FadeIn as="p" className="relative text-[0.7rem] tracking-[0.2em] uppercase text-gold mb-5 flex items-center gap-3">
-        <span className="block w-10 h-px bg-gold" />
-        Event Host · Stage Presenter
+      <FadeIn
+        as="p"
+        className="relative mb-5 flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.2em] text-gold"
+      >
+        <span className="block h-px w-10 bg-gold" />
+        Event Host · Motivational speaker
       </FadeIn>
 
-      <FadeIn as="h1" className="relative font-display text-[clamp(4.5rem,12vw,9rem)] leading-[0.92] tracking-[0.02em]">
+      <FadeIn
+        as="h1"
+        className="relative font-display text-[clamp(4.5rem,12vw,9rem)] leading-[0.92] tracking-[0.02em]"
+      >
         ELLIOT
         <br />
         <span className="text-gold">BARHAM</span>
       </FadeIn>
 
-      <FadeIn as="p" className="relative mt-6 text-[1.05rem] max-w-[520px] opacity-80 leading-[1.8]">
+      <FadeIn
+        as="p"
+        className="relative mt-6 max-w-[520px] text-[1.05rem] leading-[1.8] opacity-80"
+      >
         Trusted by the world&apos;s biggest brands — from Amazon to Nike. Delivering dedicated
         professionalism with unmatched energy and a rare ability to connect with any audience.
       </FadeIn>
@@ -46,21 +55,17 @@ export default function Hero() {
       <FadeIn className="relative mt-10 flex flex-wrap gap-4">
         <a
           href="#clips"
-          className="bg-gold text-black px-8 py-[0.85rem] text-[0.8rem] font-medium tracking-[0.1em] uppercase hover:bg-gold-light hover:-translate-y-px transition"
+          className="bg-gold px-8 py-[0.85rem] text-[0.8rem] font-medium uppercase tracking-[0.1em] text-black transition hover:-translate-y-px hover:bg-gold-light"
         >
           Watch me in action
         </a>
         <a
           href="#contact"
-          className="bg-transparent text-white px-8 py-[0.85rem] text-[0.8rem] font-medium tracking-[0.1em] uppercase border border-white/30 hover:border-gold hover:text-gold transition"
+          className="border border-white/30 bg-transparent px-8 py-[0.85rem] text-[0.8rem] font-medium uppercase tracking-[0.1em] text-white transition hover:border-gold hover:text-gold"
         >
           Book Elliot
         </a>
       </FadeIn>
-
-      <div className="hidden sm:flex absolute bottom-8 right-12 text-[0.7rem] tracking-[0.15em] uppercase text-muted items-center gap-[10px] [writing-mode:vertical-rl] after:content-[''] after:block after:w-px after:h-[50px] after:bg-gradient-to-b after:from-muted after:to-transparent">
-        Scroll
-      </div>
     </section>
   );
 }

@@ -57,7 +57,7 @@ export default function DragScroll({ children, className = '' }: Props) {
     <div className="relative">
       <div
         ref={ref}
-        className={`${className} cursor-grab active:cursor-grabbing select-none`}
+        className={`${className} cursor-grab select-none active:cursor-grabbing`}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
@@ -70,7 +70,7 @@ export default function DragScroll({ children, className = '' }: Props) {
         type="button"
         onClick={scrollNext}
         aria-label="Scroll right"
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/55 hover:bg-black/75 backdrop-blur-sm border border-gold-faint hover:border-gold text-gold text-xl transition"
+        className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gold-faint bg-black/55 text-xl text-gold backdrop-blur-sm transition hover:border-gold hover:bg-black/75"
       >
         <span aria-hidden>→</span>
       </button>
