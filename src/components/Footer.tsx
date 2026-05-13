@@ -4,7 +4,9 @@ export default function Footer() {
       <div className="font-display text-[1.1rem] tracking-[0.1em] text-gold opacity-60">
         Elliot Barham
       </div>
-      <p className="text-[0.75rem] opacity-35">© 2025 Elliot Barham. All rights reserved.</p>
+      <p className="text-[0.75rem] opacity-35">
+        © {new Date().getFullYear()} Elliot Barham. All rights reserved.
+      </p>
     </footer>
   );
 }
