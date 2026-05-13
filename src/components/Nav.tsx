@@ -8,7 +8,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="fixed left-0 right-0 top-0 z-[100] flex items-center justify-between border-b border-gold-faint bg-black/90 px-6 py-5 backdrop-blur-md sm:px-12">
+    <nav className="fixed left-0 right-0 top-0 z-[100] flex items-center justify-between border-b border-gold-faint bg-black/60 px-6 py-5 backdrop-blur-md sm:px-12">
       <div className="font-display text-[1.4rem] tracking-[0.12em] text-gold">Elliot Barham</div>
       <ul className="hidden list-none gap-8 sm:flex">
         {links.map((l) => (

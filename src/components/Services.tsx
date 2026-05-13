@@ -19,6 +19,18 @@ export default function Services() {
         <br />
         with audience interaction!”
       </FadeIn>
+      <FadeIn as="p" className="text-[0.85rem] tracking-[0.05em] opacity-60">
+        —{' '}
+        <a
+          href="https://x.com/Sh0wTig3r/status/1771872700283150472"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gold transition hover:text-gold-light"
+        >
+          @Sh0wTig3r
+        </a>{' '}
+        on Twitter
+      </FadeIn>
 
       <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-px border border-gold-faint">
         {services.map((s) => (

@@ -14,7 +14,7 @@ export default function Hero() {
 				fill
 				priority
 				sizes="100vw"
-				className="-z-10 object-cover"
+				className="-z-10 object-cover object-[center_48%]"
 			/>
 			{/* dark gradient overlay */}
 			<div
