@@ -9,6 +9,7 @@ export type Clip = {
 };
 export type TestimonialSegment = string | { highlight: string };
 export type Testimonial = {
+	title: string;
 	paragraphs: TestimonialSegment[][];
 	author: string;
 	role: string;
@@ -47,7 +48,7 @@ export const services: Service[] = [
 	{
 		num: '02',
 		title: 'Desk & TV Presenter',
-		desc: "I'm as comfortable in front of the camera as on stage.I have a natural, engaging on - screen presence that translates live energy into compelling viewing.",
+		desc: "I'm as comfortable in front of the camera as on stage. I have a natural, engaging on - screen presence that translates live energy into compelling viewing.",
 	},
 	{
 		num: '03',
@@ -74,6 +75,7 @@ export const brands: Brand[] = [
 
 export const testimonials: Testimonial[] = [
 	{
+		title: 'Elliot possesses a stage presence that is truly rare',
 		paragraphs: [
 			[
 				"Elliot's ability to captivate an audience is truly remarkable. His humor, attention to detail, and infectious energy transformed our event into an unforgettable experience. One of his many strengths is his ",
@@ -90,6 +92,7 @@ export const testimonials: Testimonial[] = [
 		role: 'Head of Community Engagement & Research, Alienware',
 	},
 	{
+		title: 'His energy and willingness are unbeatable.',
 		paragraphs: [
 			[
 				'The main skill I appreciate from Elliot is his ',
@@ -105,6 +108,7 @@ export const testimonials: Testimonial[] = [
 		role: 'Program Activation Manager, Twitch',
 	},
 	{
+		title: 'He elevates a show just by being himself.',
 		paragraphs: [
 			[
 				"Elliot is a one-of-a-kind host and human being. His stage presence and ability to connect with an audience is special, but it's ",

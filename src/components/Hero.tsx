@@ -29,7 +29,7 @@ export default function Hero() {
 
       <FadeIn as="p" className="relative text-[0.7rem] tracking-[0.2em] uppercase text-gold mb-5 flex items-center gap-3">
         <span className="block w-10 h-px bg-gold" />
-        Event Host · Stage Presenter · TV Presenter
+        Event Host · Stage Presenter
       </FadeIn>
 
       <FadeIn as="h1" className="relative font-display text-[clamp(4.5rem,12vw,9rem)] leading-[0.92] tracking-[0.02em]">

@@ -6,7 +6,7 @@ export default function Credits() {
 	const loop = [...brands, ...brands];
 
 	return (
-		<section id="credits" className="px-6 sm:px-12 py-24 bg-mid">
+		<section id="brands" className="px-6 sm:px-12 py-24 bg-mid">
 			<FadeIn as="p" className="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-3 flex items-center gap-3">
 				<span className="block w-7 h-px bg-gold"/>
 				Who I do it for
