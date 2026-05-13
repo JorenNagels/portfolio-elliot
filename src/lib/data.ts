@@ -1,5 +1,5 @@
 export type Service = { num: string; title: string; desc: string };
-export type Brand = { name: string; file: string };
+export type Brand = { name: string; file: string; sizeClass?: string };
 export type Clip = {
 	eyebrow: string;
 	title: string;
@@ -59,16 +59,21 @@ export const services: Service[] = [
 
 export const brands: Brand[] = [
 	{name: 'Amazon', file: 'amazon.svg'},
-	{name: 'Nike', file: 'nike.svg'},
+	{name: 'Alienware', file: 'alienware.svg'},
 	{name: 'DoorDash', file: 'doordash.svg'},
 	{name: 'AT&T', file: 'att.svg'},
 	{name: 'Shell', file: 'shell.svg'},
-	{name: 'Twitch', file: 'twitch.svg'},
-	{name: 'Alienware', file: 'alienware.svg'},
+	{name: 'Red Bull', file: 'red-bull.svg'},
 	{name: 'MSI', file: 'msi.svg'},
 	{name: 'ASUS', file: 'asus.svg'},
-	{name: 'OMEN', file: 'omen.svg'},
+	{name: 'Twitch', file: 'twitch.svg'},
+	{name: 'ZENNI', file: 'zenni.svg'},
+	{name: 'Nike', file: 'nike.svg'},
+	{name: 'DHL', file: 'dhl.svg'},
+	{name: 'OMEN', file: 'omen.svg', sizeClass: 'max-h-12'},
 	{name: 'Razer', file: 'razer.svg'},
+	{name: 'KICK', file: 'kick.png', sizeClass: 'max-h-7'},
+	{name: 'Lamborghini', file: 'lamborghini.svg', sizeClass: 'max-h-12'},
 	{name: 'Anthros', file: 'anthros.webp'},
 	{name: 'Dreamhack', file: 'dreamhack.svg'},
 ];

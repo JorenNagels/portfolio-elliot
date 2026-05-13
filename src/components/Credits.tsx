@@ -37,7 +37,7 @@ export default function Credits() {
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/brands/${b.file}`}
                 alt={b.name}
-                className="brand-img max-h-10 max-w-[100px] object-contain"
+                className={`brand-img ${b.sizeClass ?? 'max-h-10'} max-w-[100px] object-contain`}
               />
             </div>
           ))}
