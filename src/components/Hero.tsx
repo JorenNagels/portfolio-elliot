@@ -48,7 +48,7 @@ export default function Hero() {
 				as="p"
 				className="relative mt-6 max-w-[520px] text-[1.05rem] leading-[1.8] opacity-80"
 			>
-				Trusted by the world&apos;s biggest brands — from Amazon to Nike. Delivering dedicated
+				Trusted by the world&apos;s biggest brands — from Amazon to Zenni. Delivering dedicated
 				professionalism with unmatched energy and a rare ability to connect with any audience.
 			</FadeIn>
 
