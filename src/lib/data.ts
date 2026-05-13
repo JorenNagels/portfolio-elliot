@@ -48,7 +48,7 @@ export const services: Service[] = [
   {
     num: '02',
     title: 'Desk & TV Presenter',
-    desc: "I'm as comfortable in front of the camera as on stage. I have a natural, engaging on - screen presence that translates live energy into compelling viewing.",
+    desc: "I'm as comfortable in front of the camera as on stage. I have a natural, engaging on-screen presence that translates live energy into compelling viewing.",
   },
   {
     num: '03',
