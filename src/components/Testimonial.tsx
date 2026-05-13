@@ -31,13 +31,10 @@ export default function Testimonial() {
 								key={idx}
 								className="snap-start shrink-0 w-[min(440px,88vw)] flex flex-col bg-[#14130d] border-l-2 border-gold pl-8 pr-7 py-9"
 							>
-								<div
-									className="font-display text-[5rem] text-gold/25 leading-[0.7] mb-3"
-									aria-hidden="true"
-								>
-									&ldquo;
-								</div>
-								<div className="text-[0.95rem] leading-[1.8] opacity-85 font-light italic mb-8 space-y-6 flex-1">
+								<h3 className="font-display text-[1.6rem] sm:text-[1.85rem] leading-[1.15] tracking-[0.01em] text-gold-light mb-6">
+									&ldquo;{t.title}&rdquo;
+								</h3>
+								<div className="text-[0.92rem] leading-[1.8] opacity-80 font-light italic mb-8 space-y-5 flex-1">
 									{t.paragraphs.map((para, i) => (
 										<p key={i}>{para.map(renderSegment)}</p>
 									))}
@@ -52,9 +49,6 @@ export default function Testimonial() {
 						))}
 					</div>
 				</div>
-				<p className="mt-6 px-6 sm:px-12 text-[0.68rem] tracking-[0.22em] uppercase text-gold/60 flex items-center gap-2">
-					Swipe <span className="nudge-right inline-block">→</span>
-				</p>
 			</FadeIn>
 		</section>
 	);
