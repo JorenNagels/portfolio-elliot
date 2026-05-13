@@ -20,6 +20,7 @@ const nextConfig = {
     nextImageExportOptimizer_storePicturesInWEBP: 'true',
     nextImageExportOptimizer_generateAndUseBlurImages: 'true',
     nextImageExportOptimizer_remoteImageCacheTTL: '0',
+    nextImageExportOptimizer_basePath: basePath,
   },
 };
 
