@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Elliot Barham — Event Host & Presenter',
   description:
-    "Trusted by the world's biggest brands — from Amazon to Nike. Event host, presenter, and corporate MC delivering dedicated professionalism with unmatched energy.",
+    "Trusted by the world's biggest brands — from Amazon to Zenni. Event host, presenter, and corporate MC delivering dedicated professionalism with unmatched energy.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
