@@ -21,22 +21,22 @@ export type PortfolioPhoto = { src: string; w: number; h: number };
 
 export const portfolioImages: PortfolioPhoto[] = [
 	{src: '/images/portfolio/Arena-2012.jpg', w: 1765, h: 2329},
-	{src: '/images/portfolio/BETT_2023_Day_2-104.jpg', w: 7008, h: 4672},
-	{src: '/images/portfolio/ho1EUfPO.png', w: 1366, h: 2048},
-	{src: '/images/portfolio/IMG_2492-1.jpg', w: 4032, h: 3024},
-	{src: '/images/portfolio/IMG_4889.jpg', w: 2316, h: 3088},
-	{src: '/images/portfolio/IMG_5603.jpg', w: 3024, h: 4032},
-	{src: '/images/portfolio/IMG_8078.jpg', w: 853, h: 1280},
-	{src: '/images/portfolio/IMG-20220829-WA00133.jpg', w: 623, h: 650},
-	{src: '/images/portfolio/IMG-20220925-WA0011.jpg', w: 2000, h: 1126},
-	{src: '/images/portfolio/IMG-20220925-WA0012.jpg', w: 2000, h: 1126},
 	{src: '/images/portfolio/IMG-20231015-WA0002.jpg', w: 1600, h: 1600},
+	{src: '/images/portfolio/IMG_4889.jpg', w: 2316, h: 3088},
+	{src: '/images/portfolio/ho1EUfPO.png', w: 1366, h: 2048},
+	{src: '/images/portfolio/IMG_8078.jpg', w: 853, h: 1280},
+	{src: '/images/portfolio/IMG_3747.jpg', w: 3280, h: 2464},
+	{src: '/images/portfolio/IMG_2492-1.jpg', w: 4032, h: 3024},
+	{src: '/images/portfolio/IMG-20220829-WA00133.jpg', w: 623, h: 650},
+	{src: '/images/portfolio/IMG_5603.jpg', w: 3024, h: 4032},
+	{src: '/images/portfolio/IMG-20220925-WA0012.jpg', w: 2000, h: 1126},
 	{src: '/images/portfolio/IMG-20240630-WA0005.jpg', w: 693, h: 808},
 	{src: '/images/portfolio/PXL_20221120_113453554.PORTRAIT.jpg', w: 3024, h: 4032},
-	{src: '/images/portfolio/PXL_20230325_145222126.jpg', w: 2464, h: 3280},
 	{src: '/images/portfolio/PXL_20230903_172956625.jpg', w: 2464, h: 3280},
-	{src: '/images/portfolio/PXL_20240323_211336347.jpg', w: 2464, h: 3280},
+	{src: '/images/portfolio/PXL_20230325_145222126.jpg', w: 2464, h: 3280},
 	{src: '/images/portfolio/PXL_20240324_200647759.jpg', w: 2464, h: 3280},
+	{src: '/images/portfolio/PXL_20240323_211336347.jpg', w: 2464, h: 3280},
+	{src: '/images/portfolio/BETT_2023_Day_2-104.jpg', w: 7008, h: 4672},
 ];
 
 export const services: Service[] = [
