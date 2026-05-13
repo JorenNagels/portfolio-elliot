@@ -32,7 +32,7 @@ export default function Hero() {
         className="relative mb-5 flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.2em] text-gold"
       >
         <span className="block h-px w-10 bg-gold" />
-        Event Host · Motivational speaker
+        Event Host · Presenter
       </FadeIn>
 
       <FadeIn
