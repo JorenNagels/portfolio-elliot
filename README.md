@@ -58,12 +58,15 @@ Section structure (headings, ordering) lives in the corresponding `src/component
 ## Adding / replacing images
 
 ### Hero (`public/images/hero/`)
+
 One file. Set `heroImage` in `data.ts` to its path. Wide landscape works best (the subject should sit on the right of the frame; the left is darkened with a gradient for legibility).
 
 ### Portfolio gallery (`public/images/portfolio/`)
+
 Drop any number of files in. Add their paths to the `portfolioImages` array in `data.ts`. They render in a responsive grid (1 col mobile / 2 tablet / 3 desktop) cropped to 4:5 portrait.
 
 ### Brand logos (`public/images/brands/`)
+
 SVG strongly preferred (rendered at max 100×40 px and forced to white via `filter: brightness(0) invert(1)`). To add or reorder, edit the `brands` array in `data.ts`. The carousel duplicates the list internally for the seamless loop — no need to do that manually.
 
 ## Deployment (AWS S3)

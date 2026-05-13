@@ -18,19 +18,19 @@ The site is one page. There is no routing, no backend, no CMS, no auth. Treat it
 
 ## Where things live
 
-| File / directory                  | Purpose                                                                 |
-| --------------------------------- | ----------------------------------------------------------------------- |
-| `src/app/page.tsx`                | Section composition — change this to add / reorder sections             |
-| `src/app/layout.tsx`              | HTML shell, fonts, `<title>`/metadata                                   |
-| `src/app/globals.css`             | Tailwind directives + the few things Tailwind can't express: `fade-up`, `scroll-brands` keyframes, carousel mask, brand-img filter, hero-grid overlay |
-| `src/components/*.tsx`            | One file per section. Each is self-contained.                           |
-| `src/components/FadeIn.tsx`       | The only client component. Wrap content in `<FadeIn>` to get scroll-triggered fade-up. |
-| `src/lib/data.ts`                 | All content data — `services`, `brands`, `clips`, `heroImage`, `portfolioImages`. **Edit copy here, not in components, when possible.** |
-| `public/images/hero/`             | Hero background image (one file)                                        |
-| `public/images/portfolio/`        | Gallery photos                                                          |
-| `public/images/brands/`           | Brand SVG logos                                                         |
-| `next.config.mjs`                 | `output: 'export'`, image optimizer env vars                            |
-| `tailwind.config.ts`              | Color / font theme tokens                                               |
+| File / directory            | Purpose                                                                                                                                               |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/page.tsx`          | Section composition — change this to add / reorder sections                                                                                           |
+| `src/app/layout.tsx`        | HTML shell, fonts, `<title>`/metadata                                                                                                                 |
+| `src/app/globals.css`       | Tailwind directives + the few things Tailwind can't express: `fade-up`, `scroll-brands` keyframes, carousel mask, brand-img filter, hero-grid overlay |
+| `src/components/*.tsx`      | One file per section. Each is self-contained.                                                                                                         |
+| `src/components/FadeIn.tsx` | The only client component. Wrap content in `<FadeIn>` to get scroll-triggered fade-up.                                                                |
+| `src/lib/data.ts`           | All content data — `services`, `brands`, `clips`, `heroImage`, `portfolioImages`. **Edit copy here, not in components, when possible.**               |
+| `public/images/hero/`       | Hero background image (one file)                                                                                                                      |
+| `public/images/portfolio/`  | Gallery photos                                                                                                                                        |
+| `public/images/brands/`     | Brand SVG logos                                                                                                                                       |
+| `next.config.mjs`           | `output: 'export'`, image optimizer env vars                                                                                                          |
+| `tailwind.config.ts`        | Color / font theme tokens                                                                                                                             |
 
 ## Commands
 

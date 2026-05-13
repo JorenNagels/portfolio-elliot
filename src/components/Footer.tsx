@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-black py-8 px-6 sm:px-12 flex flex-col sm:flex-row justify-between items-center gap-2 border-t border-gold-faint">
+    <footer className="flex flex-col items-center justify-between gap-2 border-t border-gold-faint bg-black px-6 py-8 sm:flex-row sm:px-12">
       <div className="font-display text-[1.1rem] tracking-[0.1em] text-gold opacity-60">
         Elliot Barham
       </div>
