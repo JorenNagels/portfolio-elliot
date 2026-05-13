@@ -69,7 +69,7 @@ export const brands: Brand[] = [
 	{name: 'ASUS', file: 'asus.svg'},
 	{name: 'OMEN', file: 'omen.svg'},
 	{name: 'Razer', file: 'razer.svg'},
-	{name: 'Anthros', file: 'anthros.svg'},
+	{name: 'Anthros', file: 'anthros.webp'},
 	{name: 'Dreamhack', file: 'dreamhack.svg'},
 ];
 
