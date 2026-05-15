@@ -28,7 +28,7 @@ const config: Config = {
         },
       },
       animation: {
-        'scroll-brands': 'scroll-brands 32s linear infinite',
+        'scroll-brands': 'scroll-brands 45s linear infinite',
       },
     },
   },
