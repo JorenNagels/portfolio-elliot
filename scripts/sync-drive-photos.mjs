@@ -88,7 +88,13 @@ if (toAdd.length) {
 if (!added.length && !removed.length) {
 	log('Gallery already matches Drive — nothing to do.');
 } else {
-	const lines = [...kept, ...added].map((e) => `\t{src: '${e.src}', w: ${e.w}, h: ${e.h}},`);
+	// Reshuffle the whole gallery whenever it changes, so new photos don't always land last.
+	const photos = [...kept, ...added];
+	for (let i = photos.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[photos[i], photos[j]] = [photos[j], photos[i]];
+	}
+	const lines = photos.map((e) => `\t{src: '${e.src}', w: ${e.w}, h: ${e.h}},`);
 	writeFileSync(DATA_FILE, source.replace(block[0], () => block[1] + lines.join('\n') + block[3]));
 
 	// Keep files that other sections (e.g. services) still point at.
