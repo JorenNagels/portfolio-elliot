@@ -15,13 +15,6 @@ export default function Testimonial() {
   return (
     <section id="testimonial" className="px-6 py-24 sm:px-12" style={{ background: '#0d0c08' }}>
       <FadeIn
-        as="p"
-        className="mb-3 flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.22em] text-gold"
-      >
-        <span className="block h-px w-7 bg-gold" />
-        What people have to say
-      </FadeIn>
-      <FadeIn
         as="h2"
         className="mb-12 font-display text-[clamp(2.2rem,5vw,3.8rem)] leading-none tracking-[0.04em]"
       >
