@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import ExportedImage from 'next-image-export-optimizer';
 import FadeIn from './FadeIn';
 import { services } from '@/lib/data';
@@ -28,42 +29,46 @@ export default function Services() {
         on Twitter
       </FadeIn>
 
-      <div className="mt-12 grid gap-12 md:grid-cols-[3fr_2fr]">
-        <FadeIn className="flex flex-col">
-          <div className="relative aspect-[4/5] overflow-hidden bg-mid md:aspect-auto md:min-h-[420px] md:flex-1">
-            <ExportedImage
-              src={lead.image}
-              alt={lead.imageAlt}
-              fill
-              sizes="(min-width: 768px) 60vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <h3 className="mt-6 font-display text-[2.4rem] leading-none tracking-[0.03em]">
+      {/* On md+ the lead photo spans the rows of the first card plus the second card's
+          photo, so both photos share a bottom edge and the last captions share a top line. */}
+      <div className="mt-12 grid md:grid-flow-row-dense md:grid-cols-[3fr_2fr] md:gap-x-12">
+        <FadeIn className="relative aspect-[4/5] overflow-hidden bg-mid md:col-start-1 md:row-span-3 md:aspect-auto md:min-h-[420px]">
+          <ExportedImage
+            src={lead.image}
+            alt={lead.imageAlt}
+            fill
+            sizes="(min-width: 768px) 60vw, 100vw"
+            className="object-cover"
+          />
+        </FadeIn>
+        <FadeIn className="mt-6 md:col-start-1 md:mt-5">
+          <h3 className="font-display text-[2.4rem] leading-none tracking-[0.03em]">
             {lead.title}
           </h3>
           <p className="mt-3 max-w-[480px] text-base leading-[1.8] opacity-70">{lead.desc}</p>
         </FadeIn>
 
-        <div className="flex flex-col gap-12">
-          {rest.map((s) => (
-            <FadeIn key={s.title}>
-              <div className="relative aspect-[3/2] overflow-hidden bg-mid">
-                <ExportedImage
-                  src={s.image}
-                  alt={s.imageAlt}
-                  fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="mt-5 font-display text-[1.6rem] leading-none tracking-[0.03em]">
+        {rest.map((s, i) => (
+          <Fragment key={s.title}>
+            <FadeIn
+              className={`relative mt-12 aspect-[16/9] w-full overflow-hidden bg-mid md:col-start-2 md:max-h-[32vh] ${i === 0 ? 'md:mt-0' : ''}`}
+            >
+              <ExportedImage
+                src={s.image}
+                alt={s.imageAlt}
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </FadeIn>
+            <FadeIn className="mt-5 md:col-start-2">
+              <h3 className="font-display text-[1.6rem] leading-none tracking-[0.03em]">
                 {s.title}
               </h3>
               <p className="mt-2 text-[0.92rem] leading-[1.7] opacity-60">{s.desc}</p>
             </FadeIn>
-          ))}
-        </div>
+          </Fragment>
+        ))}
       </div>
     </section>
   );
