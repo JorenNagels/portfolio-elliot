@@ -38,16 +38,6 @@ export default function Hero() {
 						'linear-gradient(to right, rgba(10,10,10,0.97) 30%, rgba(10,10,10,0.6) 65%, rgba(10,10,10,0.2) 100%)',
 				}}
 			/>
-			{/* faint gold grid */}
-			<div className="hero-grid-overlay absolute inset-0 opacity-[0.04]"/>
-
-			<FadeIn
-				as="p"
-				className="relative mb-5 flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.2em] text-gold"
-			>
-				<span className="block h-px w-10 bg-gold"/>
-				Event Host · Presenter
-			</FadeIn>
 
 			<FadeIn
 				as="h1"
@@ -62,8 +52,8 @@ export default function Hero() {
 				as="p"
 				className="relative mt-6 max-w-[520px] text-[1.05rem] leading-[1.8] opacity-80"
 			>
-				Trusted by the world&apos;s biggest brands — from Amazon to Zenni. Delivering dedicated
-				professionalism with unmatched energy and a rare ability to connect with any audience.
+				Event host and presenter, trusted by the world&apos;s biggest brands from Amazon to Zenni.
+				Delivering dedicated professionalism with unmatched energy and a rare ability to connect with any audience.
 			</FadeIn>
 
 			<FadeIn className="relative mt-10 flex flex-wrap gap-4">

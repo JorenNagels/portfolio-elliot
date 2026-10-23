@@ -69,10 +69,3 @@ body {
 .nudge-right {
   animation: nudge-right 1.8s ease-in-out infinite;
 }
-
-.hero-grid-overlay {
-  background-image:
-    linear-gradient(#c9a84c 1px, transparent 1px),
-    linear-gradient(90deg, #c9a84c 1px, transparent 1px);
-  background-size: 60px 60px;
-}

@@ -1,16 +1,12 @@
+import ExportedImage from 'next-image-export-optimizer';
 import FadeIn from './FadeIn';
 import { services } from '@/lib/data';
 
 export default function Services() {
+  const [lead, ...rest] = services;
+
   return (
     <section id="services" className="px-6 py-24 sm:px-12">
-      <FadeIn
-        as="p"
-        className="mb-3 flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.22em] text-gold"
-      >
-        <span className="block h-px w-7 bg-gold" />
-        What I do
-      </FadeIn>
       <FadeIn
         as="h2"
         className="mb-2 font-display text-[clamp(2.2rem,5vw,3.8rem)] leading-none tracking-[0.04em]"
@@ -32,18 +28,42 @@ export default function Services() {
         on Twitter
       </FadeIn>
 
-      <div className="mt-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-px border border-gold-faint">
-        {services.map((s) => (
-          <FadeIn
-            key={s.num}
-            className="group relative overflow-hidden bg-mid p-10 transition-colors hover:bg-[#1f1e17]"
-          >
-            <span className="absolute left-0 right-0 top-0 h-[2px] origin-left scale-x-0 bg-gold transition-transform duration-300 group-hover:scale-x-100" />
-            <div className="mb-4 font-display text-5xl leading-none text-gold/15">{s.num}</div>
-            <p className="mb-2 text-base font-medium">{s.title}</p>
-            <p className="text-[0.88rem] leading-[1.7] opacity-60">{s.desc}</p>
-          </FadeIn>
-        ))}
+      <div className="mt-12 grid gap-12 md:grid-cols-[3fr_2fr]">
+        <FadeIn>
+          <div className="relative aspect-[4/5] overflow-hidden bg-mid">
+            <ExportedImage
+              src={lead.image}
+              alt={lead.imageAlt}
+              fill
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <h3 className="mt-6 font-display text-[2.4rem] leading-none tracking-[0.03em]">
+            {lead.title}
+          </h3>
+          <p className="mt-3 max-w-[480px] text-base leading-[1.8] opacity-70">{lead.desc}</p>
+        </FadeIn>
+
+        <div className="flex flex-col gap-12">
+          {rest.map((s) => (
+            <FadeIn key={s.title}>
+              <div className="relative aspect-[3/2] overflow-hidden bg-mid">
+                <ExportedImage
+                  src={s.image}
+                  alt={s.imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="mt-5 font-display text-[1.6rem] leading-none tracking-[0.03em]">
+                {s.title}
+              </h3>
+              <p className="mt-2 text-[0.92rem] leading-[1.7] opacity-60">{s.desc}</p>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-export type Service = { num: string; title: string; desc: string };
+export type Service = { title: string; desc: string; image: string; imageAlt: string };
 export type Brand = { name: string; file: string; sizeClass?: string };
 export type Clip = {
 	eyebrow: string;
@@ -59,18 +59,21 @@ export const portfolioImages: PortfolioPhoto[] = [
 
 export const services: Service[] = [
 	{
-		num: '01',
 		title: 'Stage & Event Host',
+		image: '/images/portfolio/_DSC9550-Enhanced-NR.jpg',
+		imageAlt: 'Elliot on stage holding a giveaway prize above his head',
 		desc: 'My favourite thing to do is get an audience excited, from tournament stages to international brand activations.',
 	},
 	{
-		num: '02',
 		title: 'Desk & TV Presenter',
+		image: '/images/portfolio/_DSC8958-Enhanced-NR.jpg',
+		imageAlt: 'Elliot presenting from the PAX Arena desk alongside a guest',
 		desc: "I'm as comfortable in front of the camera as on stage. I have a natural, engaging on-screen presence that translates live energy into compelling viewing.",
 	},
 	{
-		num: '03',
 		title: 'Corporate Host & Motivational Speaker',
+		image: '/images/portfolio/BETT_2023_Day_2-104.jpg',
+		imageAlt: 'Elliot interviewing a guest on stage at BETT 2023',
 		desc: "I've spent over a decade investigating  philosophy, the nature of the mind, and human psychology. I love helping people to reach their full potential - ask me how I can help your team gain confidence and clarity!",
 	},
 ];
@@ -155,26 +158,26 @@ export const testimonials: Testimonial[] = [
 export const clips: Clip[] = [
 	{
 		eyebrow: 'Gameshow',
-		title: 'Gameshow hosting — viral moment',
-		desc: 'Stage presence that translates beyond the live event — this clip accumulated nearly 5 million views on YouTube alone.',
+		title: 'Viral gameshow moment',
+		desc: 'Stage presence that translates beyond the live event. This clip accumulated nearly 5 million views on YouTube alone.',
 		href: 'https://www.youtube.com/watch?v=T2JHt-pQhro',
 		views: '~5M views',
 	},
 	{
 		eyebrow: 'Audience engagement',
-		title: 'Crowd hype — PAX Arena giveaway',
+		title: 'Crowd hype at the PAX Arena giveaway',
 		desc: 'My producer asked mid-show if I could draw a bigger crowd from around the venue. Check out my ability to energise an audience.',
 		href: 'https://www.twitch.tv/paxarena/v/2456096149?sr=a&t=24250s',
 	},
 	{
 		eyebrow: 'Celebrity segment',
 		title: 'Xavier Woods, Kenny Omega & Khleo Thomas',
-		desc: 'Working live with WWE’s Xavier Woods, AEW’s Kenny Omega, and actor Khleo Thomas — a masterclass in keeping big names comfortable on stage.',
+		desc: 'Working live with WWE’s Xavier Woods, AEW’s Kenny Omega, and actor Khleo Thomas: a masterclass in keeping big names comfortable on stage.',
 		href: 'https://www.twitch.tv/videos/2455360550?t=1h47m32s',
 	},
 	{
 		eyebrow: 'Brand integration',
-		title: 'TwitchCon LAN — Philips OneBlade',
+		title: 'Philips OneBlade at TwitchCon LAN',
 		desc: 'I pride myself on rolling with anything. Here’s a clip of me getting shaved live on stage as part of a brand partnership.',
 		href: 'https://www.twitch.tv/videos/2474139131?t=6h0m44s',
 	},

@@ -1,10 +1,12 @@
 import ExportedImage from 'next-image-export-optimizer';
 import FadeIn from './FadeIn';
 import DragScroll from './DragScroll';
-import { portfolioImages, type PortfolioPhoto } from '@/lib/data';
+import { portfolioImages, services, type PortfolioPhoto } from '@/lib/data';
 
-const row1 = portfolioImages.filter((_, i) => i % 2 === 0);
-const row2 = portfolioImages.filter((_, i) => i % 2 === 1);
+const usedInServices = new Set(services.map((s) => s.image));
+const gallery = portfolioImages.filter((p) => !usedInServices.has(p.src));
+const row1 = gallery.filter((_, i) => i % 2 === 0);
+const row2 = gallery.filter((_, i) => i % 2 === 1);
 
 function Photo({ p }: { p: PortfolioPhoto }) {
   return (
@@ -28,13 +30,6 @@ export default function Photos() {
   return (
     <section id="photos" className="py-24">
       <div className="px-6 sm:px-12">
-        <FadeIn
-          as="p"
-          className="mb-3 flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.22em] text-gold"
-        >
-          <span className="block h-px w-7 bg-gold" />
-          On stage
-        </FadeIn>
         <FadeIn
           as="h2"
           className="mb-2 font-display text-[clamp(2.2rem,5vw,3.8rem)] leading-none tracking-[0.04em]"

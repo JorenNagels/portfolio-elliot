@@ -47,7 +47,7 @@ public/
 
 Most copy and asset references live in **`src/lib/data.ts`**:
 
-- `services` — the 3 service cards
+- `services` — the 3 services, each with a photo from `public/images/portfolio/`
 - `brands` — list of brand carousel logos (filename + display name)
 - `clips` — the highlight cards with external links
 - `heroImage` — path to the hero background image

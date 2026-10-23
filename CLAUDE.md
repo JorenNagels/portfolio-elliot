@@ -22,7 +22,7 @@ The site is one page. There is no routing, no backend, no CMS, no auth. Treat it
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src/app/page.tsx`          | Section composition — change this to add / reorder sections                                                                                           |
 | `src/app/layout.tsx`        | HTML shell, fonts, `<title>`/metadata                                                                                                                 |
-| `src/app/globals.css`       | Tailwind directives + the few things Tailwind can't express: `fade-up`, `scroll-brands` keyframes, carousel mask, brand-img filter, hero-grid overlay |
+| `src/app/globals.css`       | Tailwind directives + the few things Tailwind can't express: `fade-up`, `scroll-brands` keyframes, carousel mask, brand-img filter                     |
 | `src/components/*.tsx`      | One file per section. Each is self-contained.                                                                                                         |
 | `src/components/FadeIn.tsx` | Client component. Wrap content in `<FadeIn>` to get scroll-triggered fade-up.                                                                |
 | `src/lib/data.ts`           | All content data — `services`, `brands`, `clips`, `heroImage`, `portfolioImages`. **Edit copy here, not in components, when possible.**               |
