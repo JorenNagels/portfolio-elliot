@@ -55,6 +55,7 @@ export const portfolioImages: PortfolioPhoto[] = [
 	{src: '/images/portfolio/_DSC8412-Enhanced-NR.jpg', w: 2400, h: 1600},
 	{src: '/images/portfolio/_DSC9220-Enhanced-NR.jpg', w: 2400, h: 1600},
 	{src: '/images/portfolio/_DSC9197-Enhanced-NR.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/Arena-428.jpg', w: 2400, h: 1603},
 ];
 
 export const services: Service[] = [
