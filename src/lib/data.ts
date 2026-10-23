@@ -37,6 +37,16 @@ export const portfolioImages: PortfolioPhoto[] = [
 	{src: '/images/portfolio/PXL_20240324_200647759.jpg', w: 2464, h: 3280},
 	{src: '/images/portfolio/PXL_20240323_211336347.jpg', w: 2464, h: 3280},
 	{src: '/images/portfolio/BETT_2023_Day_2-104.jpg', w: 7008, h: 4672},
+	{src: '/images/portfolio/Endfield-stage.webp', w: 1024, h: 767},
+	{src: '/images/portfolio/PAX-Arena-winners.webp', w: 2048, h: 1365},
+	{src: '/images/portfolio/_DSC6953.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC8273-Enhanced-NR.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC7035.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC9550-Enhanced-NR.jpg', w: 1600, h: 2400},
+	{src: '/images/portfolio/_DSC8958-Enhanced-NR.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC8412-Enhanced-NR.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC9220-Enhanced-NR.jpg', w: 2400, h: 1600},
+	{src: '/images/portfolio/_DSC9197-Enhanced-NR.jpg', w: 2400, h: 1600},
 ];
 
 export const services: Service[] = [
