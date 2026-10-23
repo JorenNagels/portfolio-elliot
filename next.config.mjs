@@ -6,7 +6,7 @@ const nextConfig = {
   trailingSlash: true,
   basePath,
   assetPrefix: basePath || undefined,
-  allowedDevOrigins: ['192.168.0.100'],
+  allowedDevOrigins: ['192.168.0.100', '192.168.0.155'],
   images: {
     loader: 'custom',
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
