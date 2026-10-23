@@ -69,3 +69,8 @@ body {
 .nudge-right {
   animation: nudge-right 1.8s ease-in-out infinite;
 }
+
+/* Keep the page from scrolling behind the photo viewer */
+html:has(dialog[open]) {
+  overflow: hidden;
+}

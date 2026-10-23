@@ -1,10 +1,12 @@
 import ExportedImage from 'next-image-export-optimizer';
 import FadeIn from './FadeIn';
 import DragScroll from './DragScroll';
+import PhotoViewer from './PhotoViewer';
 import { portfolioImages, services, type PortfolioPhoto } from '@/lib/data';
 
 const usedInServices = new Set(services.map((s) => s.image));
 const gallery = portfolioImages.filter((p) => !usedInServices.has(p.src));
+const galleryIndex = new Map(gallery.map((p, i) => [p.src, i]));
 
 // Put each photo in the currently shortest row so all rows end at roughly the same length
 function splitIntoRows(photos: PortfolioPhoto[], count: number) {
@@ -23,8 +25,11 @@ const desktopRows = splitIntoRows(gallery, 3);
 
 function Photo({ p }: { p: PortfolioPhoto }) {
   return (
-    <div
-      className="relative h-32 flex-shrink-0 overflow-hidden bg-mid sm:h-44 md:h-52"
+    <button
+      type="button"
+      data-photo-index={galleryIndex.get(p.src)}
+      aria-label="View photo"
+      className="group relative h-32 flex-shrink-0 overflow-hidden bg-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold sm:h-44 md:h-52"
       style={{ aspectRatio: `${p.w} / ${p.h}` }}
     >
       <ExportedImage
@@ -33,9 +38,9 @@ function Photo({ p }: { p: PortfolioPhoto }) {
         fill
         draggable={false}
         sizes="(min-width: 768px) 320px, (min-width: 640px) 270px, 200px"
-        className="pointer-events-none object-cover"
+        className="pointer-events-none object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       />
-    </div>
+    </button>
   );
 }
 
@@ -66,11 +71,13 @@ export default function Photos() {
       </div>
 
       <FadeIn className="mr-6 mt-12 sm:mr-12">
-        <DragScroll className="scrollbar-hide carousel-mask overflow-x-auto">
-          {/* Only one layout is displayed; lazy images in the hidden one never load */}
-          <Rows rows={mobileRows} className="flex sm:hidden" />
-          <Rows rows={desktopRows} className="hidden sm:flex" />
-        </DragScroll>
+        <PhotoViewer photos={gallery}>
+          <DragScroll className="scrollbar-hide carousel-mask overflow-x-auto">
+            {/* Only one layout is displayed; lazy images in the hidden one never load */}
+            <Rows rows={mobileRows} className="flex sm:hidden" />
+            <Rows rows={desktopRows} className="hidden sm:flex" />
+          </DragScroll>
+        </PhotoViewer>
       </FadeIn>
     </section>
   );
