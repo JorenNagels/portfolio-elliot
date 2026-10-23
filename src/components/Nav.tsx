@@ -2,7 +2,7 @@ const links = [
   { href: '#services', label: 'What I do' },
   { href: '#brands', label: 'Brands' },
   { href: '#clips', label: 'Clips' },
-  { href: '#testimonial', label: 'Testimonial' },
+  { href: '#testimonial', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
 ];
 

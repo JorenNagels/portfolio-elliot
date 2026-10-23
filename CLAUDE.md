@@ -11,7 +11,7 @@ The site is one page. There is no routing, no backend, no CMS, no auth. Treat it
 ## Architecture & conventions
 
 - **Next.js 16 App Router** with `output: 'export'` — never add anything that requires a Node runtime (no API routes, no server actions, no `revalidate`, no dynamic params, no middleware).
-- **Server components by default.** The only client component is `src/components/FadeIn.tsx` (it needs `IntersectionObserver`). Don't add `'use client'` unless the component genuinely needs browser-only APIs.
+- **Server components by default.** The client components are `FadeIn.tsx` (`IntersectionObserver`), `DragScroll.tsx` (photo drag-scroll) and `TestimonialCarousel.tsx` (swipe position dots/arrows). Don't add `'use client'` unless the component genuinely needs browser-only APIs.
 - **Tailwind CSS** for styling. Custom tokens defined in `tailwind.config.ts` (`gold`, `gold.light`, `mid`, `muted`, `border-gold-faint`, `font-display`, `font-sans`). Use these instead of hex literals.
 - **`next/font/google`** loads Bebas Neue + DM Sans at build time. Don't replace with Google Fonts CDN `<link>` tags.
 - **`next-image-export-optimizer`** generates WebP variants at build via the `prebuild` script. Use `<ExportedImage>` (the package's drop-in `next/image`) for **raster images**. Plain `<img>` is correct for SVGs (the brand logos).
@@ -24,7 +24,7 @@ The site is one page. There is no routing, no backend, no CMS, no auth. Treat it
 | `src/app/layout.tsx`        | HTML shell, fonts, `<title>`/metadata                                                                                                                 |
 | `src/app/globals.css`       | Tailwind directives + the few things Tailwind can't express: `fade-up`, `scroll-brands` keyframes, carousel mask, brand-img filter, hero-grid overlay |
 | `src/components/*.tsx`      | One file per section. Each is self-contained.                                                                                                         |
-| `src/components/FadeIn.tsx` | The only client component. Wrap content in `<FadeIn>` to get scroll-triggered fade-up.                                                                |
+| `src/components/FadeIn.tsx` | Client component. Wrap content in `<FadeIn>` to get scroll-triggered fade-up.                                                                |
 | `src/lib/data.ts`           | All content data — `services`, `brands`, `clips`, `heroImage`, `portfolioImages`. **Edit copy here, not in components, when possible.**               |
 | `public/images/hero/`       | Hero background image (one file)                                                                                                                      |
 | `public/images/portfolio/`  | Gallery photos                                                                                                                                        |
