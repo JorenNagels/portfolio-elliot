@@ -29,8 +29,8 @@ export default function Services() {
       </FadeIn>
 
       <div className="mt-12 grid gap-12 md:grid-cols-[3fr_2fr]">
-        <FadeIn>
-          <div className="relative aspect-[4/5] overflow-hidden bg-mid">
+        <FadeIn className="flex flex-col">
+          <div className="relative aspect-[4/5] overflow-hidden bg-mid md:aspect-auto md:min-h-[420px] md:flex-1">
             <ExportedImage
               src={lead.image}
               alt={lead.imageAlt}
