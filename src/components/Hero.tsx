@@ -1,6 +1,6 @@
 import ExportedImage from 'next-image-export-optimizer';
 import FadeIn from './FadeIn';
-import {heroImage} from '@/lib/data';
+import {heroImage, heroPoster, heroVideo, useVideoHero} from '@/lib/data';
 
 export default function Hero() {
 	return (
@@ -8,14 +8,28 @@ export default function Hero() {
 			id="home"
 			className="relative flex min-h-screen flex-col justify-end overflow-hidden px-6 pb-20 sm:px-12"
 		>
-			<ExportedImage
-				src={heroImage}
-				alt=""
-				fill
-				priority
-				sizes="100vw"
-				className="-z-10 object-cover object-[center_48%]"
-			/>
+			{useVideoHero ? (
+				// no `loop`: the video stops and stays on its last frame
+				<video
+					src={heroVideo}
+					poster={heroPoster}
+					autoPlay
+					muted
+					playsInline
+					preload="auto"
+					aria-hidden="true"
+					className="absolute inset-0 -z-10 h-full w-full object-cover"
+				/>
+			) : (
+				<ExportedImage
+					src={heroImage}
+					alt=""
+					fill
+					priority
+					sizes="100vw"
+					className="-z-10 object-cover object-[center_48%]"
+				/>
+			)}
 			{/* dark gradient overlay */}
 			<div
 				className="absolute inset-0"

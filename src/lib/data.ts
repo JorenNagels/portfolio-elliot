@@ -15,7 +15,15 @@ export type Testimonial = {
 	role: string;
 };
 
+// true = hero video below, false = heroImage (the lightsaber photo).
+export const useVideoHero = true;
+
 export const heroImage = '/images/hero/Lightsaber_DreamHack_mirror.png';
+
+// Plays once and holds on the last frame; the poster is that same last frame.
+// The ease-out (slowing from 1x to ~0.4x over the last 5s of footage) is baked into the file.
+export const heroVideo = '/videos/hero.mp4';
+export const heroPoster = '/videos/hero-poster.jpg';
 
 export type PortfolioPhoto = { src: string; w: number; h: number };
 
