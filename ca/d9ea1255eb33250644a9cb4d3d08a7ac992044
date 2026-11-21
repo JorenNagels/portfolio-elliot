@@ -1,0 +1,21 @@
+.github/workflows/deploy.yml
+  s_6a47ce73f858d8::t_57925c32221bc9 21,23,35,47
+.github/workflows/sync-drive-photos.yml
+  s_6a47ce73f858d8::t_10247c94047dc0 16,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cad9ea1255eb33250644a9cb4d3d08a7ac992044",
+  "prompts": {},
+  "sessions": {
+    "s_6a47ce73f858d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6a47ce73f858d8",
+        "model": "unknown"
+      },
+      "human_author": "Joren Nagels <njoren@gmail.com>"
+    }
+  }
+}
