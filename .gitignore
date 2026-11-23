@@ -40,3 +40,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code. Personal settings (settings.local.json) and worktrees stay local.
+#
+#   .claude/skills/       — GENERATED, not committed. Agent Skills live once in
+#                           .agents/skills/ (the vendor-neutral path Codex reads) and
+#                           scripts/sync-skills.mjs copies them here, because Claude
+#                           Code only scans .claude/skills/ and reads nothing under
+#                           .agents/. Rebuilt by `prepare` on every npm install.
+#                           Copied rather than symlinked so it works on Windows, where
+#                           git checks symlinks out as plain text files.
+#   .claude/settings.json — COMMITTED. Permission rules that make publishing prompt.
+#
+# Note `.claude/*` not `.claude/` — a trailing slash would ignore the directory itself
+# and the negation below could not re-include anything inside it.
+.claude/*
+!.claude/settings.json

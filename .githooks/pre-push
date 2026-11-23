@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# Blocks pushing a `v*` release tag unless `npm run deploy` is the one doing it.
+#
+# Pushing a v-tag IS a production deploy (.github/workflows/deploy.yml), so this is the
+# last line of defence before the live site changes. Everything else that protects a
+# release is either prose an agent can ignore (AGENTS.md, CLAUDE.md) or Claude-Code-only
+# (.claude/settings.json permission prompts — Codex, Cursor and friends never see those).
+# This hook is tool-independent: any agent, any editor, any terminal goes through git.
+#
+# scripts/release.mjs sets PORTFOLIO_RELEASE=1 when it pushes, and it only gets that far
+# after verifying the branch, building the Lambda and site, and getting a human's
+# go-ahead. So a tag arriving here without that marker means something skipped the
+# checks — refuse it.
+#
+# Installed automatically by `npm install` (the `prepare` script sets core.hooksPath).
+# Verify with:  git config core.hooksPath     → should print .githooks
+
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+	case "$remote_ref" in
+	refs/tags/v*)
+		if [ "$PORTFOLIO_RELEASE" != "1" ]; then
+			tag=$(printf '%s' "$remote_ref" | sed 's|refs/tags/||')
+			cat >&2 <<EOF
+
+✗ Refusing to push the release tag $tag.
+
+  Pushing a v* tag deploys https://elliot.dreamteamproductions.co.uk to the public — it is not just a tag.
+  This one did not come from the release script, so nothing has been verified: no build
+  check, and nobody confirmed it.
+
+  Use the release script instead. It builds everything, shows what would ship, and asks
+  before tagging:
+
+      npm run deploy:check     # safe, changes nothing
+      npm run deploy           # asks you to confirm, then ships
+
+  If you are an agent: delete the tag you just created (git tag -d $tag), then follow
+  the procedure in AGENTS.md — summarise the release for the user, ask, and only on a
+  clear yes run: npm run deploy -- --confirm
+
+  Do not retry this push with --no-verify.
+
+EOF
+			exit 1
+		fi
+		;;
+	esac
+done
+
+exit 0

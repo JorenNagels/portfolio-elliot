@@ -1,9 +1,16 @@
 name: Deploy to GitHub Pages
 
+# Publishing is gated: the ONLY trigger is a `v*` tag, and the only sanctioned way to
+# create one is `npm run deploy` (scripts/release.mjs), which builds, checks the site is
+# still unindexed, and requires an explicit human go-ahead before it tags anything. A
+# `pre-push` hook (.githooks/pre-push) refuses v* tags that did not come from that script.
+#
+# `workflow_dispatch` is deliberately absent. It let anyone with write access publish from
+# the Actions tab in two clicks, bypassing those checks. To republish without cutting a new
+# tag, re-run the last successful run from the Actions UI instead of re-adding it.
 on:
   push:
     tags: ['v*']
-  workflow_dispatch:
 
 permissions:
   contents: read

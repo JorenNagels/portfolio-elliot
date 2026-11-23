@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "ask": [
+      "Bash(npm run deploy)",
+      "Bash(npm run deploy:*)",
+      "Bash(npm run deploy --:*)",
+      "Bash(git tag:*)",
+      "Bash(git push:*)",
+      "Bash(gh workflow run:*)",
+      "Bash(gh release:*)"
+    ],
+    "deny": ["Bash(gh secret:*)", "Read(./.env)", "Read(./.env.local)", "Read(./.env.*)"]
+  }
+}

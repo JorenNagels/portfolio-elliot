@@ -1,0 +1,67 @@
+# Codex execution-policy rules for the Elliot Barham portfolio — the counterpart to
+# .claude/settings.json.
+#
+# This is what makes Codex behave like Claude Code here: prompt before anything that could
+# publish the live site, and refuse the commands that could leak the repo's one secret.
+#
+# decision = "prompt"    → Codex asks the user before running it
+# decision = "forbidden" → Codex refuses; strictest matching rule wins
+#
+# Codex loads these only once the project is TRUSTED. Trust is set per project in the
+# user's own ~/.codex/config.toml, so a repo cannot force it:
+#
+#     [projects."/path/to/portfolio-elliot"]
+#     trust_level = "trusted"
+#
+# Until then these rules are inactive — but .githooks/pre-push still blocks unapproved
+# release tags, because that lives in git rather than in any one tool.
+#
+# Rules are an experimental Codex feature and the syntax may change. If Codex reports a
+# problem loading this file, the hook and AGENTS.md still protect the site; fix or delete
+# this file rather than disabling the hook.
+
+# --- Publishing: always ask a human first ------------------------------------------------
+# `npm run deploy` publishes to https://elliot.dreamteamproductions.co.uk. The release
+# script also requires an explicit go-ahead, but this makes the prompt happen at the tool
+# level too, so a human sees it even if the agent skipped asking.
+
+prefix_rule(
+    pattern = ["npm", "run", "deploy"],
+    decision = "prompt",
+    justification = "Publishes the live portfolio at elliot.dreamteamproductions.co.uk. A person must confirm.",
+)
+
+# Tagging IS the deploy — a v* tag push triggers .github/workflows/deploy.yml.
+prefix_rule(
+    pattern = ["git", "tag"],
+    decision = "prompt",
+    justification = "A v* tag triggers a publish to the live site. Use npm run deploy instead.",
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "prompt",
+    justification = "Pushing a v* tag publishes the live site; pre-push will refuse one that skipped the release script.",
+)
+
+prefix_rule(
+    pattern = ["gh", "workflow", "run"],
+    decision = "prompt",
+    justification = "Can trigger the deploy and the Google Drive photo sync.",
+)
+
+prefix_rule(
+    pattern = ["gh", "release"],
+    decision = "prompt",
+    justification = "Creates tags, which trigger a publish.",
+)
+
+# --- The repo secret: never --------------------------------------------------------------
+# GDRIVE_SERVICE_ACCOUNT_KEY is a Google Drive service-account key used by the monthly
+# gallery sync. Nothing in normal work needs to read, change or delete it.
+
+prefix_rule(
+    pattern = ["gh", "secret"],
+    decision = "forbidden",
+    justification = "This repo holds a Google Drive service-account key. Owner only.",
+)

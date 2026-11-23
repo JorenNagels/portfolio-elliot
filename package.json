@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true && node scripts/sync-skills.mjs",
     "dev": "next dev",
     "prebuild": "next-image-export-optimizer",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "deploy": "node scripts/release.mjs",
+    "deploy:check": "node scripts/release.mjs --check",
+    "sync-skills": "node scripts/sync-skills.mjs --verbose",
     "format": "prettier --write ."
   },
   "dependencies": {
