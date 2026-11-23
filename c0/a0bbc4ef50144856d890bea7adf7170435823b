@@ -1,0 +1,19 @@
+scripts/release.mjs
+  s_379f6a98e7bcf2::t_04fd45516ef578 167-188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c0a0bbc4ef50144856d890bea7adf7170435823b",
+  "prompts": {},
+  "sessions": {
+    "s_379f6a98e7bcf2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_379f6a98e7bcf2",
+        "model": "unknown"
+      },
+      "human_author": "Joren Nagels <njoren@gmail.com>"
+    }
+  }
+}
