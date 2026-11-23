@@ -31,17 +31,17 @@ export default function Services() {
 
       {/* On md+ the lead photo spans the rows of the first card plus the second card's
           photo, so both photos share a bottom edge and the last captions share a top line. */}
-      <div className="mt-12 grid md:grid-flow-row-dense md:grid-cols-[3fr_2fr] md:gap-x-12">
-        <FadeIn className="relative aspect-[4/5] overflow-hidden bg-mid md:col-start-1 md:row-span-3 md:aspect-auto md:min-h-[420px]">
+      <div className="mt-12 grid md:grid-flow-row-dense md:grid-cols-[2fr_3fr] md:gap-x-12">
+        <FadeIn className="relative aspect-[4/5] overflow-hidden bg-mid md:col-start-2 md:row-span-3 md:aspect-auto md:min-h-[420px]">
           <ExportedImage
             src={lead.image}
             alt={lead.imageAlt}
             fill
             sizes="(min-width: 768px) 60vw, 100vw"
-            className="object-cover"
+            className="-scale-x-100 object-cover object-[center_85%]"
           />
         </FadeIn>
-        <FadeIn className="mt-6 md:col-start-1 md:mt-5">
+        <FadeIn className="mt-6 md:col-start-2 md:mt-5">
           <h3 className="font-display text-[2.4rem] leading-none tracking-[0.03em]">
             {lead.title}
           </h3>
@@ -51,17 +51,17 @@ export default function Services() {
         {rest.map((s, i) => (
           <Fragment key={s.title}>
             <FadeIn
-              className={`relative mt-12 aspect-[16/9] w-full overflow-hidden bg-mid md:col-start-2 md:max-h-[32vh] ${i === 0 ? 'md:mt-0' : ''}`}
+              className={`relative mt-12 aspect-[16/9] w-full overflow-hidden bg-mid md:col-start-1 md:max-h-[32vh] ${i === 0 ? 'md:mt-0' : ''}`}
             >
               <ExportedImage
                 src={s.image}
                 alt={s.imageAlt}
                 fill
                 sizes="(min-width: 768px) 40vw, 100vw"
-                className="object-cover"
+                className={`object-cover ${i === 1 ? 'origin-[40%_35%] scale-150' : ''}`}
               />
             </FadeIn>
-            <FadeIn className="mt-5 md:col-start-2">
+            <FadeIn className="mt-5 md:col-start-1">
               <h3 className="font-display text-[1.6rem] leading-none tracking-[0.03em]">
                 {s.title}
               </h3>

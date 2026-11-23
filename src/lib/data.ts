@@ -61,8 +61,8 @@ export const portfolioImages: PortfolioPhoto[] = [
 export const services: Service[] = [
 	{
 		title: 'Stage & Event Host',
-		image: '/images/portfolio/_DSC9550-Enhanced-NR.jpg',
-		imageAlt: 'Elliot on stage holding a giveaway prize above his head',
+		image: '/images/portfolio/ho1EUfPO.png',
+		imageAlt: 'Elliot hosting on stage with a microphone and a lightsaber',
 		desc: 'My favourite thing to do is get an audience excited, from tournament stages to international brand activations.',
 	},
 	{
@@ -73,13 +73,15 @@ export const services: Service[] = [
 	},
 	{
 		title: 'Corporate Host & Motivational Speaker',
-		image: '/images/portfolio/BETT_2023_Day_2-104.jpg',
-		imageAlt: 'Elliot interviewing a guest on stage at BETT 2023',
+		image: '/images/portfolio/_DSC6953.jpg',
+		imageAlt: 'Elliot smiling while presenting at a lectern',
 		desc: "I've spent over a decade investigating  philosophy, the nature of the mind, and human psychology. I love helping people to reach their full potential - ask me how I can help your team gain confidence and clarity!",
 	},
 ];
 
 export const brands: Brand[] = [
+	{name: 'OpenAI', file: 'openai.svg'},
+	{name: 'Hypergryph', file: 'hypergryph.svg'},
 	{name: 'Amazon', file: 'amazon.svg'},
 	{name: 'Alienware', file: 'alienware.svg'},
 	{name: 'DoorDash', file: 'doordash.svg'},
