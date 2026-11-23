@@ -164,7 +164,28 @@ if (!/index:\s*false/.test(layout)) {
   );
 }
 ok('noindex metadata present');
-run('robots.txt present and blocking', 'grep -q "Disallow: /" public/robots.txt');
+
+let robots = '';
+try {
+  robots = execSync('cat public/robots.txt', { encoding: 'utf8' });
+} catch {
+  fail(
+    'public/robots.txt is missing.',
+    'It is one of only two things keeping this site out of search results (the other is',
+    'the `noindex` metadata in src/app/layout.tsx). Restore it before releasing.',
+  );
+}
+if (!/^\s*Disallow:\s*\/\s*$/m.test(robots)) {
+  fail(
+    'public/robots.txt no longer blocks crawlers.',
+    'It needs a `Disallow: /` line. This site is shared by direct link only and must not',
+    'be indexed by search engines or AI crawlers. See AGENTS.md.',
+    '',
+    'Current contents:',
+    ...robots.split('\n').slice(0, 15),
+  );
+}
+ok('robots.txt blocking crawlers');
 
 // --- 4. show what would ship ---------------------------------------------------------------
 
